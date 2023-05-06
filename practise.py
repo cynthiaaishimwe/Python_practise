@@ -19,7 +19,7 @@ def remove_vowels(name):
 name = "beautiful"        
 print(remove_vowels(name))
 
-#  Given a list of numbers, use list comprehension to 
+# 7. Given a list of numbers, use list comprehension to 
 # remove all odd numbers from the list:
 # numbers = [3,5,45,97,32,22,10,19,39,43]
 
@@ -47,24 +47,48 @@ a = [10,20,30,40,50]
 b = [20,70,80,90,50]
 print (common_members(a,b))
 
-#  Use a nested list comprehension to find all of the numbers from 1-1000 
+# 9. Use a nested list comprehension to find all of the numbers from 1-1000 
 # that are divisible by any single digit besides 1 (2-9)
 
+def divisible_nums():
+    newNums = [num for num in range(1, 1001) if (num % i == 0 for i in range(2, 10))]
+    return newNums
+print(divisible_nums())
+
+
+# 5.Write a Python program to convert a list to a list of dictionaries.
+# Sample lists: ["Black", "Red", "Maroon", "Yellow"],
+# ["#000000", "#FF0000", "#800000", "#FFFF00"]
+
+def color_dictionary(a,b):
+ a=["Black", "Red", "Maroon", "Yellow"]
+ b=["#000000", "#FF0000", "#800000", "#FFFF00"]
+list_of_dicts = dict(zip(a,b))
+print(color_dictionary(a,b))
 
 # Write a Python program to check whether all dictionaries in a list are empty or not
-# def check_empty_dicts(lst):
-#      for d in lst:
-#         if bool(d):
-#          return False
-#         else:
-#          return True
-    
-# dict1= [{}, {}, {}]  
-# print(check_empty_dicts(d))  
 
-# dict_list = [{}, {}, {'a': 1}]  
-# print(check_empty_dicts(dict_list))  
-     
+list1 = [{}, {}, {}]
+list2 = [{}, {"key": "value"}, {}]
+
+def dict(dict_list):
+    return all(not d for d in dict_list)
+
+print(dict(list1)) 
+print(dict (list2)) 
+
+
+# Write a Python program that accepts a comma-separated sequence of words as input
+# and prints the distinct words in sorted form (alphanumerically).
+def words (words):
+    words_list = words.split(",")
+    output = sorted(words_list)
+    for i in output:
+        print(i)
+
+words("wel,helllo,my,name,hopper")
+
+
 
 
 
